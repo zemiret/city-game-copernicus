@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+        }        
+
+        #error {
+            display: none;
+        }
+
+        #answer {
+            display: none;
+        }
+    </style>
+
+    <script>
+        var ANSWER = "COPERNICUS";
+
+        function validateAnswer() {
+            var submitedAnswer = document.getElementById("answer-input").value;
+
+            document.getElementById("answer").style = "display: none;"
+            document.getElementById("error").style = "display: none;"
+
+            if (submitedAnswer === ANSWER) {
+                document.getElementById("answer").style = "display: block;"
+            } else {
+                document.getElementById("error").style = "display: block; color: #993300;"
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <p>Szyfr: 3/1  5/3  1/4  5/1  2/4  4/3  4/2 
+        3/1  5/4  3/4</p>
+
+    <form>
+        <label for="answer-input">Odpowiedź: </label>
+        <input id="answer-input" type="text" name="answer">
+        <button type="button" onclick="validateAnswer()">Sprawdź</button>
+    </form>
+
+    <p id="error">
+        Zła odpowiedź. Spróbuj ponownie.
+    </p>
+
+    <p id="answer">
+        Poprawna odpowiedź! Rozwiązanie: SI DEUS NOBISCUM QUIS CONTRA NOS
+    </p>
+</body>
+
+</html>
